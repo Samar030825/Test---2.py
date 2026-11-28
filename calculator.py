@@ -1,34 +1,39 @@
-import math
-print("====CALCULATOR====")
+def add(a, b):
+    return a + b
 
-a = int(input("Enter the first no. : "))
-b = int(input("Enter the second no. : "))
-print("choose the operator from the folllowing : ")
-print("1. +")
-print("2. -")
-print("3. *")
-print("4. /")
-op = input("Tell the operator :")
+def subtract(a, b):
+    return a - b
 
-while True :    
-    def calculate(a,b,op):
-        if op == "+":
-            result = a + b
-            print("Result is : " , result)
-        elif op =="-":
-            result = a - b
-            print("Result is : ", result)
-        elif op =="*":
-            result = a * b 
-            print("Result is : " , result)
-        elif op =="/":
-            result = a/b
-            print('Result is : ' , result)
-        else:
-            print("Wrong input . Check again !")
-            return result
-        
-    break
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+print("=====FUNCTION CALCULATOR=====")
+
+try:
+    a = float(input("First number: "))
+    b = float(input("Second number: "))
+    op = input("Operation (add, subtract, multiply, divide): ")
+
+    if op == "add":
+        print("Result:", add(a, b))
+    elif op == "subtract":
+        print("Result:", subtract(a, b))
+    elif op == "multiply":
+        print("Result:", multiply(a, b))
+    elif op == "divide":
+        print("Result:", divide(a, b))
+    else:
+        print("Unknown operation.")
+except ValueError:
+    print("Please type numbers only.")
+except ZeroDivisionError:
+    print("You cannot divide by zero.")
+finally:
+    print("Thanks for using the calculator!")
+
+
 
                     
 
